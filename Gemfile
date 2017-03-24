@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'qa', github: 'projecthydra-labs/questioning_authority', branch: 'linked_data'
+group :development, :test do
+  gem 'linkeddata'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
