@@ -7,5 +7,6 @@ module Hyrax
     include Hyrax::WorksControllerBehavior
     include Hyrax::BreadcrumbsForWorks
     self.curation_concern_type = DemoWork
+    self.show_presenter = DemoWorkPresenter
   end
 end

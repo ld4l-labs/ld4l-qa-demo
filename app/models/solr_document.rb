@@ -25,4 +25,28 @@ class SolrDocument
   # Do content negotiation for AF models. 
 
   use_extension( Hydra::ContentNegotiation )
+
+  def oclc_organization
+    self[Solrizer.solr_name('oclc_organization')]
+  end
+
+  def oclc_organization_uri
+    self[Solrizer.solr_name('oclc_organization_uri')]
+  end
+
+  def agrovoc_keyword
+    self[Solrizer.solr_name('agrovoc_keyword')]
+  end
+
+  def agrovoc_keyword_uri
+    self[Solrizer.solr_name('agrovoc_keyword_uri')]
+  end
+
+  def agrovoc_keyword_fr
+    self[Solrizer.solr_name('agrovoc_keyword_fr')]
+  end
+
+  def agrovoc_keyword_fr_uri
+    self[Solrizer.solr_name('agrovoc_keyword_fr_uri')]
+  end
 end

@@ -8,4 +8,24 @@ class DemoWork < ActiveFedora::Base
   validates :title, presence: { message: 'Your work must have a title.' }
   
   self.human_readable_type = 'Demo Work'
+
+  property :oclc_organization_uri, predicate: ::RDF::URI.new('http://www.example.org/ns#oclc_org'), multiple: true
+  property :oclc_organization, predicate: ::RDF::URI.new('http://www.example.org/ns#oclc_org_label'), multiple: true do |index|
+    index.as :stored_searchable, :facetable
+  end
+
+  property :agrovoc_keyword_uri, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword'), multiple: true
+  property :agrovoc_keyword, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword_label'), multiple: true do |index|
+    index.as :stored_searchable, :facetable
+  end
+
+  property :agrovoc_keyword_fr_uri, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword_fr'), multiple: true
+  property :agrovoc_keyword_fr, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword_label_fr'), multiple: true do |index|
+    index.as :stored_searchable, :facetable
+  end
+
+  property :loc_name_uri, predicate: ::RDF::URI.new('http://www.example.org/ns#loc_name'), multiple: true
+  property :loc_name, predicate: ::RDF::URI.new('http://www.example.org/ns#loc_name_label'), multiple: true do |index|
+    index.as :stored_searchable, :facetable
+  end
 end

@@ -89,6 +89,11 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_show_field solr_name("title", :stored_searchable), label: "Title"
     config.add_show_field solr_name("description", :stored_searchable), label: "Description"
+
+    config.add_show_field solr_name("oclc_organization", :stored_searchable), label: "Oclc Organization"
+    config.add_show_field solr_name("agrovoc_keyword", :stored_searchable), label: "Agrovoc Keyword (en)"
+    config.add_show_field solr_name("agrovoc_keyword_fr", :stored_searchable), label: "Agrovoc Keyword (fr)"
+
     config.add_show_field solr_name("keyword", :stored_searchable), label: "Keyword"
     config.add_show_field solr_name("subject", :stored_searchable), label: "Subject"
     config.add_show_field solr_name("creator", :stored_searchable), label: "Creator"
