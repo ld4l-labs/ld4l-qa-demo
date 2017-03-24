@@ -1,0 +1,8 @@
+en:
+  hyrax:
+    icons:
+      demo_work:     'fa fa-file-text-o'
+    select_type:
+      demo_work:
+        name:               "Demo Work"
+        description:        "Demo work works"
