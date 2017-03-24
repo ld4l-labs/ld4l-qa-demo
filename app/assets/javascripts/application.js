@@ -20,4 +20,5 @@
 
 //= require_tree .
 //= require hyrax
-
+//= require hyrax/autocomplete_extension
+//= require hyrax/autocomplete/linked_data

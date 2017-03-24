@@ -3,6 +3,7 @@
    input_html: {
       class: 'form-control',
       data: { 'autocomplete-url' => '/authorities/search/linked_data/agrovoc?q=',
-              'autocomplete' => key }
+              'autocomplete' => 'linked_data',
+              'autocomplete-uri-name' => "#{key}_uri" }
    },
    required: f.object.required?(key) %>

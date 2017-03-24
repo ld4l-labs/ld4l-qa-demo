@@ -92,7 +92,9 @@ class CatalogController < ApplicationController
 
     config.add_show_field solr_name("oclc_organization", :stored_searchable), label: "Oclc Organization"
     config.add_show_field solr_name("agrovoc_keyword", :stored_searchable), label: "Agrovoc Keyword (en)"
+    config.add_show_field solr_name("agrovoc_keyword_uri", :stored_searchable), label: "Agrovoc Keyword URI (en)"
     config.add_show_field solr_name("agrovoc_keyword_fr", :stored_searchable), label: "Agrovoc Keyword (fr)"
+    config.add_show_field solr_name("agrovoc_keyword_fr_uri", :stored_searchable), label: "Agrovoc Keyword URI (fr)"
 
     config.add_show_field solr_name("keyword", :stored_searchable), label: "Keyword"
     config.add_show_field solr_name("subject", :stored_searchable), label: "Subject"

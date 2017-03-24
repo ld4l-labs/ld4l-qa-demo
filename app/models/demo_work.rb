@@ -14,12 +14,18 @@ class DemoWork < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
-  property :agrovoc_keyword_uri, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword'), multiple: true
+  # TODO: URI probably doesn't need to be stored_searchable, but I couldn't get it to show up on the show page for the work with out this
+  property :agrovoc_keyword_uri, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword'), multiple: true do |index|
+    index.as :stored_searchable
+  end
   property :agrovoc_keyword, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword_label'), multiple: true do |index|
     index.as :stored_searchable, :facetable
   end
 
-  property :agrovoc_keyword_fr_uri, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword_fr'), multiple: true
+  # TODO: same issue as agrovoc_keyword_uri
+  property :agrovoc_keyword_fr_uri, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword_fr'), multiple: true do |index|
+    index.as :stored_searchable
+  end
   property :agrovoc_keyword_fr, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword_label_fr'), multiple: true do |index|
     index.as :stored_searchable, :facetable
   end
