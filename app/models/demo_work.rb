@@ -14,6 +14,13 @@ class DemoWork < ActiveFedora::Base
     index.as :stored_searchable, :facetable
   end
 
+  property :oclc_person_uri, predicate: ::RDF::URI.new('http://www.example.org/ns#oclc_person'), multiple: true do |index|
+    index.as :stored_searchable
+  end
+  property :oclc_person, predicate: ::RDF::URI.new('http://www.example.org/ns#oclc_person_label'), multiple: true do |index|
+    index.as :stored_searchable, :facetable
+  end
+
   # TODO: URI probably doesn't need to be stored_searchable, but I couldn't get it to show up on the show page for the work with out this
   property :agrovoc_keyword_uri, predicate: ::RDF::URI.new('http://www.example.org/ns#agrovoc_keyword'), multiple: true do |index|
     index.as :stored_searchable

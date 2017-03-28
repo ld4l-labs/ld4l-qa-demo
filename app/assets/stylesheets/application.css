@@ -14,3 +14,9 @@
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require_self
  */
+
+.linked-data-alt-authority, .linked-data-additional_uris {
+    font-size: .8em;
+    color: darkgray;
+    margin-top: 7px;
+}
