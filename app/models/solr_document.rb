@@ -34,6 +34,14 @@ class SolrDocument
     self[Solrizer.solr_name('oclc_organization_uri')]
   end
 
+  def oclc_person
+    self[Solrizer.solr_name('oclc_person')]
+  end
+
+  def oclc_person_uri
+    self[Solrizer.solr_name('oclc_person_uri')]
+  end
+
   def agrovoc_keyword
     self[Solrizer.solr_name('agrovoc_keyword')]
   end

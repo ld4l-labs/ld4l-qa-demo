@@ -1,8 +1,9 @@
 <%= presenter.attribute_to_html(:creator, render_as: :faceted) %>
 <%= presenter.attribute_to_html(:contributor, render_as: :faceted) %>
 <%= presenter.attribute_to_html(:oclc_organization, render_as: :faceted) %>
-<%= presenter.attribute_to_html(:agrovoc_keyword, render_as: :faceted) %>
-<%= presenter.attribute_to_html(:agrovoc_keyword_uri, render_as: :external_link) %>
+<%= presenter.attribute_to_html(:oclc_person, render_as: :faceted_plus_dbpedia_data) %>
+<%= presenter.attribute_to_html(:oclc_person_uri, render_as: :external_link) %>
+<%= presenter.attribute_to_html(:agrovoc_keyword_uri, render_as: :faceted_linked_data, label: 'Agrovoc Keyword') %>
 <%= presenter.attribute_to_html(:agrovoc_keyword_fr, render_as: :faceted) %>
 <%= presenter.attribute_to_html(:agrovoc_keyword_fr_uri, render_as: :external_link) %>
 <%= presenter.attribute_to_html(:subject, render_as: :faceted) %>
