@@ -147,3 +147,32 @@ Test
 * complete rest of required metadata and add a file
 * save
 * confirm that selected values are in the controlled properties on the show page along with external links for the URIs of the agrovoc properties
+
+
+### Step 6: Leverage linked data on show page
+
+In this step, you are using standard renderers and adding custom renderers for the show page to add special display code for two linked data fields:
+   
+1. use existing renderer to render string label as facet
+1. use existing renderer to render uri as external link to the original authority
+1. add custom renderer to render string label as a facet and uri as an external link plus include label and uri for each narrower, broader, and sameas predicate
+1. add custom renderer to render string label as a facet and include external information from dbpedia
+
+Test
+
+* view the show page for previously saved work
+* confirm that OCLC Organization has a faceted link for the field value that searches Hyrax for other works with the same value
+* confirm that Agrovoc Keyword fr URI has an external link that goes to the Agrovoc authority show page for the URI
+* confirm that Agrovoc Keyword has a faceted link for the label and an external link to Agrovoc for the URI
+* confirm that Agrovoc keyword has narrower, broader, and sameas labels and URIs
+* confirm that OCLC Person has a faceted link for the field value and additional information (e.g. birth, death, and abstract) from dbpedia
+
+
+### Full Disclosure
+
+The following is the state of the show page renderers used in this app.
+
+* WORKS faceted link for label string value (defined in Hyrax)
+* WORKS external link for URI (defined in Hyrax)
+* NEEDS IMPROVEMENT custom renderer for additional predicates (e.g. narrower, broader, sameas) available from the term.  This works well if the number of additional predicates is relatively small (e.g. < 10).  If it grows too large, it can become a performance issue.  Each additional predicate requires a request from the authority to get the label value associated with the predicate.
+* KLUDGE custom renderer to get additional information from dbpedia.  I make use of the fact that dbpedia uses the person name as the resource id.  I parse the name from OCLC to make an educated guess at the dbpedia resource id.  Sometimes it works; sometimes not.
