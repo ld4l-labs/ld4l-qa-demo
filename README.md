@@ -2,9 +2,9 @@
 
 ## Overview
 
-This demo app shows the use of the [Questioning Authority linked_data branch](https://github.com/projecthydra-labs/questioning_authority/tree/linked_data) to use linked data 
+This demo app shows the use of the [Questioning Authority linked_data branch](https://github.com/samvera/questioning_authority/tree/linked_data) to use linked data 
 authorities to select values for controlled vocabulary properties.  There are 3 preconfigured linked data authorities.  See the 
-[QA README Linked Data section](https://github.com/projecthydra-labs/questioning_authority/tree/linked_data#linked-open-data-lod-authorities) for more information
+[QA README Linked Data section](https://github.com/samvera/questioning_authority/tree/linked_data#linked-open-data-lod-authorities) for more information
 on configurating authorities, making queries, and fetching a term.
 
 The demo includes 3 fields:
